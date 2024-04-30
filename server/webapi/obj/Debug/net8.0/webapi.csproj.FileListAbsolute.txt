@@ -32,3 +32,4 @@ C:\Users\Grant\Documents\GitHub\monthly-canvas\server\webapi\obj\Debug\net8.0\re
 C:\Users\Grant\Documents\GitHub\monthly-canvas\server\webapi\obj\Debug\net8.0\webapi.pdb
 C:\Users\Grant\Documents\GitHub\monthly-canvas\server\webapi\obj\Debug\net8.0\webapi.genruntimeconfig.cache
 C:\Users\Grant\Documents\GitHub\monthly-canvas\server\webapi\obj\Debug\net8.0\ref\webapi.dll
+C:\Users\Grant\Documents\GitHub\monthly-canvas\server\webapi\bin\Debug\net8.0\Newtonsoft.Json.dll
