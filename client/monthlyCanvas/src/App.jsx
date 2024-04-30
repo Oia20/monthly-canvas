@@ -7,7 +7,8 @@ function App() {
   const [title, setTitle] = useState(null); // State to store fetched data
   const [image, setImage] = useState(null)
   const [artist, setArtist] = useState(null)
-  const ide=  13344
+    // List<string> ids = new List<string> { "437984", "13344", "437991", "437532", "10186", "11040", "36029", "36081", "437149", "435690" };
+  const ide=  437984
   useEffect(() => {
     fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/' +ide) // Assuming your backend has a route '/api/metmuseum/paintings'
     .then(response => {
@@ -21,6 +22,7 @@ function App() {
       const title = data.title;
       const name = data.artistDisplayName
       console.log(title);
+      console.log(data);
       setTitle(title); // Set the fetched title into state
       setArtist(name)
     })
