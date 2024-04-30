@@ -7,8 +7,8 @@ function App() {
   const [title, setTitle] = useState(null); // State to store fetched data
   const [image, setImage] = useState(null)
   const [artist, setArtist] = useState(null)
-    // List<string> ids = new List<string> { "437984", "13344", "437991", "437532", "10186", "11040", "36029", "36081", "437149", "435690" };
-  const ide=  437984
+    // List<string> ids = new List<string> {  "435690" };
+  const ide=  435690
   useEffect(() => {
     fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/' +ide) // Assuming your backend has a route '/api/metmuseum/paintings'
     .then(response => {
@@ -30,25 +30,6 @@ function App() {
       // Handle errors
       console.error('There was a problem with the fetch operation:', error);
     });
-
-    fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/'+ide) // Assuming your backend has a route '/api/metmuseum/paintings'
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json(); // Parse the response body as JSON
-    })
-    .then(data => {
-      // Work with the JSON data
-      const image = data.primaryImage;
-      console.log(image);
-      setImage(image); // Set the fetched title into state
-    })
-    .catch(error => {
-      // Handle errors
-      console.error('There was a problem with the fetch operation:', error);
-    });
-  
   }, []); // Empty dependency array to run the effect only once
 
   return (
