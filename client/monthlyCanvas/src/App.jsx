@@ -1,55 +1,40 @@
-import React, { useEffect, useState } from 'react'
-import './App.css'
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import './App.css';
+import { createClient } from '@supabase/supabase-js';
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [title, setTitle] = useState(null); // State to store fetched data
-  const [image, setImage] = useState(null)
-  const [artist, setArtist] = useState(null)
-    // List<string> ids = new List<string> {  "435690" };
-  const ide=  435690
-  useEffect(() => {
-    fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/' +ide) // Assuming your backend has a route '/api/metmuseum/paintings'
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json(); // Parse the response body as JSON
-    })
-    .then(data => {
-      // Work with the JSON data
-      const title = data.title;
-      const name = data.artistDisplayName
-      console.log(title);
-      console.log(data);
-      setTitle(title); // Set the fetched title into state
-      setArtist(name)
-    })
-    .catch(error => {
-      // Handle errors
-      console.error('There was a problem with the fetch operation:', error);
-    });
-  }, []); // Empty dependency array to run the effect only once
+  const [artists, setArtists] = useState([]);
+  const supabase = createClient(process.env.supaurl, process.env.supatok);
 
+  useEffect(() => {
+    fetchArtists();
+  }, []); // Dependency added to re-fetch data when supabase client changes
+  async function fetchArtists() {
+    try {
+      const { data, error } = await supabase.from('paintings').select();
+      if (error) {
+        throw error;
+      }
+      setArtists(data);
+    } catch (error) {
+      console.error('Error fetching artists:', error.message);
+    }
+  }
   return (
     <>
       <div>
+        <h1>Vite + React</h1>
+        <div className="card">
+          <p>Edit <code>src/App.jsx</code> and save to test HMR</p>
+          <ul>
+            {artists.map((country) => (
+              <li key={country.name}>{country.artist}</li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-        <h1>{artist}</h1>
-        <h1>{title}</h1>
-      </div>
-      <img src={image}/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
