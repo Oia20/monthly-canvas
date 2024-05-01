@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{9D402A85-AFA1-43C1-BDD8-7909F9E6B3EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "canvasAPI", "server\canvasAPI\canvasAPI.csproj", "{7003788D-C1E6-4CA4-912F-7F44741F8CEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7003788D-C1E6-4CA4-912F-7F44741F8CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7003788D-C1E6-4CA4-912F-7F44741F8CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7003788D-C1E6-4CA4-912F-7F44741F8CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7003788D-C1E6-4CA4-912F-7F44741F8CEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7003788D-C1E6-4CA4-912F-7F44741F8CEF} = {9D402A85-AFA1-43C1-BDD8-7909F9E6B3EA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0B14DC2-1082-48D4-99FF-EA753E3D302E}
+	EndGlobalSection
+EndGlobal
