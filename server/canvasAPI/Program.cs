@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using canvasAPI.models;
-
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<CanvasContext>(opt =>
-    opt.UseInMemoryDatabase("Artworks"));
+    opt.UseNpgsql(Configuration.GetConnectionString("ArtDb")));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

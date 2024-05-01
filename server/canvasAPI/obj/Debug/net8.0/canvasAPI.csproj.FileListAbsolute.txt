@@ -34,3 +34,6 @@ C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\obj\Debug\net8.0
 C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\Npgsql.dll
+C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
