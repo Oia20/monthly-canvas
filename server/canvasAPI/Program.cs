@@ -16,8 +16,20 @@ builder.Services.AddDbContext<CanvasContext>(options =>
 {
    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-var app = builder.Build();
 
+
+builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowSpecificOrigin",
+                builder =>
+                {
+                    builder.WithOrigins("http://127.0.0.1:5173") // Replace with your actual origin
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                });
+        });
+var app = builder.Build();
+app.UseCors("AllowSpecificOrigin");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
