@@ -1,21 +1,8 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+html {
+  max-width: none;
+  height: 100%;
 }
 
 @keyframes logo-spin {
@@ -33,10 +20,59 @@
   }
 }
 
-.card {
-  padding: 2em;
+.loader {
+  
+  animation: spin 4s linear infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  margin: auto;
+  overflow:hidden;
+  img {
+    height: 15%;
+    width: 15%;
+    margin: auto;
+  overflow:hidden;
+
+  }
+
+  div {
+    width: fit-content;
+    height: fit-content;
+    overflow:hidden;
+
+  }
 }
 
-.read-the-docs {
-  color: #888;
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.content {
+  width: 100%;
+
+  img {
+    max-width: 50%;
+    max-height: 50%;
+  }
+}
+
+
+
+
+h1, h2 {
+  width: fit-content;
+}
+
+.div-ld {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  margin: auto;
 }
