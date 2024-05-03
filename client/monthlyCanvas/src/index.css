@@ -8,3 +8,24 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+/* Width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f2d8c5; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #be8ebb; 
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8a6c93; 
+}

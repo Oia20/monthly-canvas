@@ -38,7 +38,7 @@ export default function Comments() {
                 placeholder='Add a comment'
                 className='comment-textarea'
             ></textarea>
-            <button>Comment</button>
+            <button><h4>Comment</h4></button>
         </div>
     )
 }

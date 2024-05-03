@@ -11,6 +11,8 @@
 }
 
 .flex-row {
+    display: flex;
+    flex-direction: column;
     h2 {
         margin: 10px;
         margin-left: 20%;
@@ -37,7 +39,34 @@
     }
 
     button {
-        margin-left: 80%;
-    }
-    
+        margin-right: 10%;
+        background-color: #f8b296;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        color: #444444;
+        width: fit-content;
+        align-self: flex-end;
+        background-color: #be8ebb;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border: solid 2px #8a6c93;
+        transition: border-radius 0.3s ease; /* Smooth transition for border radius */
+        color: #444444;
+        width: fit-content;
+        align-self: flex-end;
+        margin-top: 10px;
+            h4 {
+              height: fit-content;
+              margin: 0px;
+            }
+          }
+        button:hover {
+            background-color:#8a6c93;
+            cursor: pointer;
+            border-radius: 50%;
+            border-color: #be8ebb;
+        }
 }
+    
