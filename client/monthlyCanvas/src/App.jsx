@@ -6,6 +6,7 @@ function App() {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
   const [loading, setLoading] = useState(true);
+  const [month, setMonth] = useState(true);
 
   useEffect(() => {
     fetchArtists();
@@ -21,7 +22,8 @@ function App() {
       const date = new Date();
       const month = date.getMonth();
       const currentData = data[month + 1];
-      
+      const monthName = date.toLocaleString('default', { month: 'long' });
+      setMonth(monthName)
       setArtist(currentData.artist);
       setTitle(currentData.title);
       setImage(currentData.image);
@@ -31,6 +33,8 @@ function App() {
       setLoading(false);
     }
   }
+
+
 
   return (
     <>
@@ -44,9 +48,13 @@ function App() {
         <>
         <Nav />
         <div className='content'>
+        <div class="plaque">
+          <h1>{month}'s Painting</h1>
+      </div>
+
+          <img src={image} alt="Artwork"/>
           <h1>{artist}</h1>
           <h2>{title}</h2>
-          <img src={image} alt="Artwork"/>
         </div>
         </>
       )}
