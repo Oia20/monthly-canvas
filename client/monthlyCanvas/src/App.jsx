@@ -48,13 +48,20 @@ function App() {
         <>
         <Nav />
         <div className='content'>
-        <div class="plaque">
+        <div className="plaque">
           <h1>{month}'s Painting</h1>
       </div>
 
           <img src={image} alt="Artwork"/>
-          <h1>{artist}</h1>
-          <h2>{title}</h2>
+        <div className="plaque-title">
+
+          <h1>{title}</h1>
+          </ div>
+          <div className="plaque-title">
+
+
+          <h1>By: {artist}</h1>
+          </div>
         </div>
         </>
       )}
