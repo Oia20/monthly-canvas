@@ -1,0 +1,33 @@
+
+
+.com-line {
+        width: 90%; /* Adjust as needed */
+        height: 1px;
+        background-color: black;
+        display: inline-block; /* Display inline */
+        vertical-align: middle; /* Align vertically with text */
+        margin-right: 10px; /* Adjust spacing */
+        margin: auto;
+}
+
+.flex-row {
+    h2 {
+        margin: 10px;
+        margin-left: 20%;
+        padding: 10px;
+        color: #444444;
+
+    }
+
+    input {
+        margin-left: 20%;
+        width: 70%;
+        box-sizing: border-box;
+        padding: 5px;
+        background-color: #f8b296;
+        border: 2px solid #8a6c93; /* Solid border */
+        border-radius: 20px;
+        color: #444444;
+        height: 30px;
+    }
+}

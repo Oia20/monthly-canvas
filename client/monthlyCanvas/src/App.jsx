@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Nav from './nav.jsx'
+import Comments from './comments.jsx'
+
 function App() {
   const [artist, setArtist] = useState('');
   const [title, setTitle] = useState('');
@@ -63,6 +65,7 @@ function App() {
           <h3>By: {artist}</h3>
           </div>
         </div>
+        <Comments />
         </>
       )}
     </>
