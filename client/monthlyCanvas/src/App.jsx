@@ -55,12 +55,12 @@ function App() {
           <img src={image} alt="Artwork"/>
         <div className="plaque-title">
 
-          <h1>{title}</h1>
+          <h3>{title}</h3>
           </ div>
           <div className="plaque-title">
 
 
-          <h1>By: {artist}</h1>
+          <h3>By: {artist}</h3>
           </div>
         </div>
         </>
