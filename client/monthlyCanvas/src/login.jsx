@@ -5,7 +5,7 @@ export default function LoginForm() {
     return (
         <div className="login-container">
             <div className="login-form">
-            <h2>Login</h2>
+            <h1>Sign in to Monthly-Canvas</h1>
             <form>
                 <div className="form-group">
                 <label for="email">Email</label>
@@ -15,11 +15,11 @@ export default function LoginForm() {
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required />
                 </div>
-                <button type="submit">Login</button>
+                <button className="logbut" type="submit"><h4>Login</h4></button>
             </form>
             <p>Don't have an account? <a href="#">Sign up</a></p>
             <Link to="/">
-                <a>Return to this months artwork</a>
+                <p><a>Return to this months artwork</a></p>
             </Link>
             </div>
         </div>
