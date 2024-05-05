@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jacob\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\canvasAPI.csproj": {}
+    "C:\\Users\\Grant\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\canvasAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jacob\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\canvasAPI.csproj": {
+    "C:\\Users\\Grant\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\canvasAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jacob\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\canvasAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Grant\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\canvasAPI.csproj",
         "projectName": "canvasAPI",
-        "projectPath": "C:\\Users\\Jacob\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\canvasAPI.csproj",
-        "packagesPath": "C:\\Users\\Jacob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jacob\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\obj\\",
+        "projectPath": "C:\\Users\\Grant\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\canvasAPI.csproj",
+        "packagesPath": "C:\\Users\\Grant\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Grant\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jacob\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Grant\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,11 +58,8 @@
               "version": "[8.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
-<<<<<<< HEAD
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
-=======
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
               "target": "Package",
               "version": "[8.0.4, )"
             },

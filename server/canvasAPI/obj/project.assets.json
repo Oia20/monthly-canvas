@@ -49,11 +49,7 @@
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "lib/net6.0/_._": {
-=======
-          "lib/net6.0/Humanizer.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".xml"
           }
         },
@@ -412,11 +408,7 @@
           "System.Text.Encoding.CodePages": "6.0.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/netcoreapp3.1/_._": {
-=======
-          "lib/netcoreapp3.1/Microsoft.CodeAnalysis.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".pdb;.xml"
           }
         },
@@ -473,11 +465,7 @@
           "Microsoft.CodeAnalysis.Common": "[4.5.0]"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/netcoreapp3.1/_._": {
-=======
-          "lib/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".pdb;.xml"
           }
         },
@@ -537,11 +525,7 @@
           "Microsoft.CodeAnalysis.Workspaces.Common": "[4.5.0]"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/netcoreapp3.1/_._": {
-=======
-          "lib/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.Workspaces.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".pdb;.xml"
           }
         },
@@ -603,11 +587,7 @@
           "System.Threading.Channels": "6.0.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/netcoreapp3.1/_._": {
-=======
-          "lib/netcoreapp3.1/Microsoft.CodeAnalysis.Workspaces.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".pdb;.xml"
           }
         },
@@ -783,11 +763,7 @@
           "Mono.TextTemplating": "2.2.1"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net8.0/_._": {
-=======
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Design.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".xml"
           }
         },
@@ -964,11 +940,7 @@
           "System.Text.Json": "8.0.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net8.0/_._": {
-=======
-          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".xml"
           }
         },
@@ -1678,11 +1650,7 @@
           "System.CodeDom": "4.4.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/netstandard2.0/_._": {}
-=======
-          "lib/netstandard2.0/Mono.TextTemplating.dll": {}
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
         },
         "runtime": {
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
@@ -1937,11 +1905,7 @@
       "System.CodeDom/4.4.0": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "ref/netstandard2.0/_._": {
-=======
-          "ref/netstandard2.0/System.CodeDom.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".xml"
           }
         },
@@ -1984,11 +1948,7 @@
       "System.Composition.AttributedModel/6.0.0": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "lib/net6.0/_._": {
-=======
-          "lib/net6.0/System.Composition.AttributedModel.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".xml"
           }
         },
@@ -2007,11 +1967,7 @@
           "System.Composition.AttributedModel": "6.0.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net6.0/_._": {
-=======
-          "lib/net6.0/System.Composition.Convention.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".xml"
           }
         },
@@ -2030,11 +1986,7 @@
           "System.Composition.Runtime": "6.0.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net6.0/_._": {
-=======
-          "lib/net6.0/System.Composition.Hosting.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".xml"
           }
         },
@@ -2050,11 +2002,7 @@
       "System.Composition.Runtime/6.0.0": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "lib/net6.0/_._": {
-=======
-          "lib/net6.0/System.Composition.Runtime.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".xml"
           }
         },
@@ -2075,11 +2023,7 @@
           "System.Composition.Runtime": "6.0.0"
         },
         "compile": {
-<<<<<<< HEAD
           "lib/net6.0/_._": {
-=======
-          "lib/net6.0/System.Composition.TypedParts.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".xml"
           }
         },
@@ -2216,11 +2160,7 @@
       "System.IO.Pipelines/6.0.3": {
         "type": "package",
         "compile": {
-<<<<<<< HEAD
           "lib/net6.0/_._": {
-=======
-          "lib/net6.0/System.IO.Pipelines.dll": {
->>>>>>> bc817f5dae5c1731ee228e4a9219fd168d4e9ecd
             "related": ".xml"
           }
         },
@@ -2494,7 +2434,7 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Text.Encoding.CodePages.dll": {
+          "lib/net6.0/_._": {
             "related": ".xml"
           }
         },
@@ -6288,24 +6228,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jacob\\.nuget\\packages\\": {}
+    "C:\\Users\\Grant\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jacob\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\canvasAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Grant\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\canvasAPI.csproj",
       "projectName": "canvasAPI",
-      "projectPath": "C:\\Users\\Jacob\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\canvasAPI.csproj",
-      "packagesPath": "C:\\Users\\Jacob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jacob\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\obj\\",
+      "projectPath": "C:\\Users\\Grant\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\canvasAPI.csproj",
+      "packagesPath": "C:\\Users\\Grant\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Grant\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jacob\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Grant\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6390,5 +6332,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Grant\\Documents\\GitHub\\monthly-canvas\\server\\canvasAPI\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
