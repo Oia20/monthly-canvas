@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+
 namespace canvasAPI.models;
 
 public class CanvasContext : DbContext

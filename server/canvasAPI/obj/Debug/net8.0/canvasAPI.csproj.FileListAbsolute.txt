@@ -158,3 +158,9 @@ C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0
 C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Grant\Documents\GitHub\monthly-canvas\server\canvasAPI\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

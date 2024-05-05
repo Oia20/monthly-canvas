@@ -3,7 +3,6 @@ using canvasAPI.models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,7 +15,6 @@ builder.Services.AddDbContext<CanvasContext>(options =>
 {
    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
 
 builder.Services.AddCors(options =>
         {
