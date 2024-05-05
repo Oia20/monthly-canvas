@@ -11,4 +11,6 @@ public class CanvasContext : DbContext
     }
  
     public DbSet<Artworks> Artworks { get; set; } = null!;
+
+    public DbSet<Comments> Comments { get; set; } = null!;
 }

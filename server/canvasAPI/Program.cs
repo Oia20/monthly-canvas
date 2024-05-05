@@ -27,6 +27,10 @@ builder.Services.AddCors(options =>
                 });
         });
 var app = builder.Build();
+
+app.MapGet("/comments", async (CanvasContext db) =>
+    await db.Comments.ToListAsync());
+
 app.UseCors("AllowSpecificOrigin");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
