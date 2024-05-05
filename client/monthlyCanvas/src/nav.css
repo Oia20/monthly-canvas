@@ -37,7 +37,8 @@ button {
     width: fit-content;
     align-self: flex-end;
     transition: border-radius 0.3s ease; 
-
+    display: flex;
+    margin: auto;
   h4 {
     height: fit-content;
     margin: 0px;

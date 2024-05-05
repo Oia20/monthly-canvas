@@ -2,18 +2,35 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Nav from './nav.jsx'
 import Comments from './comments.jsx'
+import { createClient } from '@supabase/supabase-js';
 
 function App() {
   const [artist, setArtist] = useState('');
   const [title, setTitle] = useState('');
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState('886728_1_x.webp');
   const [loading, setLoading] = useState(true);
   const [month, setMonth] = useState(true);
+  const [user, setUser] = useState(null)
+
+  const supabase = createClient(
+    "https://gliscfokeivkvdrwzlsv.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdsaXNjZm9rZWl2a3Zkcnd6bHN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ1MDQ0MDEsImV4cCI6MjAzMDA4MDQwMX0.XTXSScKdkRFNKbvB5lbPy8-XBtEec7oMac29BSb71Is"
+  );
 
   useEffect(() => {
     fetchArtists();
+    fetchUser();
   }, []);
 
+  function refreshPage() {
+    window.location.reload();
+  }
+
+  async function fetchUser() {
+    const { data: { user } } = await supabase.auth.getUser()
+    console.log(user.aud)
+    setUser(user.aud)
+  }
   async function fetchArtists() {
     try {
       const response = await fetch('http://localhost:5102/api/Artworks');
@@ -30,7 +47,8 @@ function App() {
       setTitle(currentData.title);
       setImage(currentData.image);
     } catch (error) {
-      console.error('There was a problem with the fetch operation:', error);
+      // console.error('There was a problem with the fetch operation:', error);
+      fetchArtists()
     } finally {
       setLoading(false);
     }
