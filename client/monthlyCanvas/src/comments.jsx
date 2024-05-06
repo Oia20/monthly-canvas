@@ -15,44 +15,47 @@ export default function Comments() {
 
     // Function to handle posting the comment
     const postComment = () => {
-    setComment("")
-    if (comment.length > 0) {
-        const url = new URL('http://localhost:5102/comments/post');
-        url.searchParams.append('month', month);
+        setComment("");
+        if (comment.length > 0) {
+            const url = new URL('http://localhost:5102/comments/post');
+            url.searchParams.append('month', month);
+            
+            const postData = {
+                "comment": comment.toString(),
+                "month": month
+            };
         
-        const postData = {
-            "comment": comment.toString(),
-            "month": month
-        };
-    
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(postData),
-        })
-        .then(response => {
-            if (response.ok) {
-                console.log('Comment posted successfully');
-                // Update comments using the callback version of setComments
-                setComments(prevComments => [
-                    ...prevComments,
-                    { id: prevComments.length + 1, comment: comment }
-                ]);
-                setCommentsNum(commentsNum + 1);
-                setComment(''); // Clear the comment input
-            } else {
-                console.error('Failed to post comment');
-            }
-        })
-        .catch(error => {
-            console.error('Error posting comment:', error);
-        });
-    } else {
-        console.log("empty")
-    }
-};
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(postData),
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Comment posted successfully');
+                    // Generate a unique ID for the new comment
+                    const newCommentId = Date.now();
+                    // Update comments using the functional update form of setComments
+                    setComments(prevComments => [
+                        ...prevComments,
+                        { id: newCommentId, comment: comment }
+                    ]);
+                    setCommentsNum(prevNum => prevNum + 1);
+                    setComment(''); // Clear the comment input
+                } else {
+                    console.error('Failed to post comment');
+                }
+            })
+            .catch(error => {
+                console.error('Error posting comment:', error);
+            });
+        } else {
+            console.log("empty")
+        }
+        setTimeout(fetchComments, 1000);
+    };
 
     // Fetch comments when component mounts
     useEffect(() => {

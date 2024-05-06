@@ -9,7 +9,7 @@ function App() {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('886728_1_x.webp');
   const [loading, setLoading] = useState(true);
-  const [month, setMonth] = useState(true);
+  const [month, setMonth] = useState("Month");
   const [user, setUser] = useState(null)
 
   const supabase = createClient(
