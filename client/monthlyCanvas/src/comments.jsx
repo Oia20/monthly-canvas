@@ -20,14 +20,16 @@ export default function Comments() {
     const handleTextareaBlur = (event) => {
         event.target.style.height = 'auto';
     };
-    const postData =  {
-        "comment": comment.toString(),
-        "month": month
-    }
+    
     // Function to handle posting the comment
     const postComment = () => {
         const url = new URL('http://localhost:5102/comments/post');
         url.searchParams.append('month', month);
+        
+        const postData = {
+            "comment": comment.toString(),
+            "month": month
+        };
     
         fetch(url, {
             method: 'POST',
