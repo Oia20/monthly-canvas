@@ -1,10 +1,11 @@
-import './comments.css'
+import './comments.css';
 import React, { useEffect, useState } from 'react';
 
 export default function Comments() {
     const [commentsNum, setCommentsNum] = useState(0);
     const [comment, setComment] = useState('');
-
+    const date = new Date();
+    const month = date.getMonth() + 1;
     const handleTextareaChange = (event) => {
         const textareaLineHeight = 24; // Adjust as needed
         const previousScrollHeight = event.target.scrollHeight;
@@ -19,6 +20,33 @@ export default function Comments() {
     const handleTextareaBlur = (event) => {
         event.target.style.height = 'auto';
     };
+    const postData =  {
+        "comment": comment.toString(),
+        "month": month
+    }
+    // Function to handle posting the comment
+    const postComment = () => {
+        const url = new URL('http://localhost:5102/comments/post');
+        url.searchParams.append('month', month);
+    
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(postData),
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Comment posted successfully');
+            } else {
+                console.error('Failed to post comment');
+            }
+        })
+        .catch(error => {
+            console.error('Error posting comment:', error);
+        });
+    };
 
     // Automatically resize textarea when component mounts
     useEffect(() => {
@@ -27,6 +55,7 @@ export default function Comments() {
         textarea.style.height = 'auto';
         textarea.style.height = (textarea.scrollHeight + textareaLineHeight) + 'px';
     }, []);
+
     return (
         <div className='flex-row'>
             <h2>{commentsNum} Comments</h2>
@@ -38,7 +67,7 @@ export default function Comments() {
                 placeholder='Add a comment'
                 className='comment-textarea'
             ></textarea>
-            <button><h4>Comment</h4></button>
+            <button onClick={postComment}><h4>Comment</h4></button>
         </div>
-    )
+    );
 }

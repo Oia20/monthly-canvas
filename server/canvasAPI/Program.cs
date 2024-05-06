@@ -31,6 +31,17 @@ var app = builder.Build();
 app.MapGet("/comments", async (CanvasContext db) =>
     await db.Comments.ToListAsync());
 
+
+app.MapPost("/comments/post", async (Comments comment, int month, CanvasContext db) =>
+{
+    comment.month = month;
+    db.Comments.Add(comment);
+    
+    await db.SaveChangesAsync();
+
+    return Results.Created($"/comments/{comment.id}", comment);
+});
+
 app.UseCors("AllowSpecificOrigin");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
