@@ -1,28 +1,22 @@
-import './comments.css';
 import React, { useEffect, useState } from 'react';
+import './comments.css';
 
 export default function Comments() {
     const [commentsNum, setCommentsNum] = useState(0);
     const [comment, setComment] = useState('');
+    const [comments, setComments] = useState([]);
+
     const date = new Date();
     const month = date.getMonth() + 1;
+
     const handleTextareaChange = (event) => {
-        const textareaLineHeight = 24; // Adjust as needed
-        const previousScrollHeight = event.target.scrollHeight;
-        event.target.style.maxHeight = 'none'; // Reset max-height to get accurate scrollHeight
-        event.target.style.height = 'auto';
-        event.target.style.height = (event.target.scrollHeight + textareaLineHeight) + 'px';
-        event.target.style.maxHeight = '200px'; // Adjust max-height as needed
         setComment(event.target.value);
     };
 
-    // Reset textarea height when focus is lost
-    const handleTextareaBlur = (event) => {
-        event.target.style.height = 'auto';
-    };
-    
     // Function to handle posting the comment
     const postComment = () => {
+    setComment("")
+    if (comment.length > 0) {
         const url = new URL('http://localhost:5102/comments/post');
         url.searchParams.append('month', month);
         
@@ -41,6 +35,13 @@ export default function Comments() {
         .then(response => {
             if (response.ok) {
                 console.log('Comment posted successfully');
+                // Update comments using the callback version of setComments
+                setComments(prevComments => [
+                    ...prevComments,
+                    { id: prevComments.length + 1, comment: comment }
+                ]);
+                setCommentsNum(commentsNum + 1);
+                setComment(''); // Clear the comment input
             } else {
                 console.error('Failed to post comment');
             }
@@ -48,6 +49,27 @@ export default function Comments() {
         .catch(error => {
             console.error('Error posting comment:', error);
         });
+    } else {
+        console.log("empty")
+    }
+};
+
+    // Fetch comments when component mounts
+    useEffect(() => {
+        fetchComments();
+    }, []);
+
+    // Function to fetch comments
+    const fetchComments = () => {
+        fetch('http://localhost:5102/comments')
+            .then(response => response.json())
+            .then(data => {
+                setComments(data);
+                setCommentsNum(data.length);
+            })
+            .catch(error => {
+                console.error('Error fetching comments:', error);
+            });
     };
 
     // Automatically resize textarea when component mounts
@@ -65,11 +87,17 @@ export default function Comments() {
                 id="commentInput"
                 value={comment}
                 onChange={handleTextareaChange}
-                onBlur={handleTextareaBlur}
                 placeholder='Add a comment'
                 className='comment-textarea'
             ></textarea>
             <button onClick={postComment}><h4>Comment</h4></button>
+            <div>
+                {comments.slice().reverse().map(comment => (
+                    <div key={comment.id}>
+                        <p>{comment.comment}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
