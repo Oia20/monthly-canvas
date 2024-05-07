@@ -83,8 +83,11 @@ export default function Comments(props) {
         fetch('http://localhost:5102/comments')
             .then(response => response.json())
             .then(data => {
-                setComments(data);
-                setCommentsNum(data.length);
+                const filteredComments = data.filter(comment => comment.month === month)
+            
+                // Set filtered comments and their count
+                setComments(filteredComments);
+                setCommentsNum(filteredComments.length);
             })
             .catch(error => {
                 console.error('Error fetching comments:', error);

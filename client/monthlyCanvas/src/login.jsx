@@ -6,6 +6,7 @@ import { supabase } from './supabaseClient'
 
 export default function LoginForm() {
 
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null); // State for error message
