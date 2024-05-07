@@ -96,19 +96,10 @@ html {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.404);
   margin: 10px;
   border: solid 2px #d2a079;
-  font-size: 0.8vw;
+  font-size: .9rem;
   margin-bottom: 12px;
 }
-@media screen and (max-width: 700px) {
-  .plaque {
-      font-size: 1.7vw; /* Or any other value suitable for smaller screens */
-  }
 
-  .plaque-title h3{
-    font-size: 3vw; /* Or any other value suitable for smaller screens */
-
-  }
-}
 .plaque h1 {
   font-family: 'Times New Roman', serif;
   color: #444444;
