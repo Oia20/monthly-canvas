@@ -5,6 +5,8 @@ import Comments from './comments.jsx'
 import { createClient } from '@supabase/supabase-js';
 import { Canvas } from '@react-three/fiber';
 import { Stars, Sparkles } from '@react-three/drei'
+import { supabase } from './supabaseClient'
+
 function ThreeDScene() {
   return (
     <Canvas style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1}} camera={{ fov: 130, position: [-10, -10, -10] }}>
@@ -20,10 +22,10 @@ function App() {
   const [month, setMonth] = useState("Month");
   const [user, setUser] = useState(null)
 
-  const supabase = createClient(
-    "https://gliscfokeivkvdrwzlsv.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdsaXNjZm9rZWl2a3Zkcnd6bHN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ1MDQ0MDEsImV4cCI6MjAzMDA4MDQwMX0.XTXSScKdkRFNKbvB5lbPy8-XBtEec7oMac29BSb71Is"
-  );
+  // const supabase = createClient(
+  //   "https://gliscfokeivkvdrwzlsv.supabase.co",
+  //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdsaXNjZm9rZWl2a3Zkcnd6bHN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ1MDQ0MDEsImV4cCI6MjAzMDA4MDQwMX0.XTXSScKdkRFNKbvB5lbPy8-XBtEec7oMac29BSb71Is"
+  // );
 
   useEffect(() => {
     fetchArtists();

@@ -2,15 +2,16 @@ import "./register.css"
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { createClient } from '@supabase/supabase-js';
 import { useState } from 'react'; // Import useState hook
+import { supabase } from './supabaseClient'
 
 export default function RegisterForm() {
     const [formData, setFormData] = useState({}); // State for form data
     const [error, setError] = useState(null); // State for error message
 
-    const supabase = createClient(
-        "https://gliscfokeivkvdrwzlsv.supabase.co",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdsaXNjZm9rZWl2a3Zkcnd6bHN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ1MDQ0MDEsImV4cCI6MjAzMDA4MDQwMX0.XTXSScKdkRFNKbvB5lbPy8-XBtEec7oMac29BSb71Is"
-    )
+    // const supabase = createClient(
+    //     "https://gliscfokeivkvdrwzlsv.supabase.co",
+    //     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdsaXNjZm9rZWl2a3Zkcnd6bHN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ1MDQ0MDEsImV4cCI6MjAzMDA4MDQwMX0.XTXSScKdkRFNKbvB5lbPy8-XBtEec7oMac29BSb71Is"
+    // )
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });

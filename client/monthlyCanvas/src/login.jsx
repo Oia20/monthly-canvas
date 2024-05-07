@@ -2,12 +2,9 @@ import { useState } from 'react'; // Import useState hook
 import { createClient } from '@supabase/supabase-js';
 import { BrowserRouter as Router, Route, Link, useNavigate } from 'react-router-dom';
 import './login.css'
+import { supabase } from './supabaseClient'
 
 export default function LoginForm() {
-    const supabase = createClient(
-        "https://gliscfokeivkvdrwzlsv.supabase.co",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdsaXNjZm9rZWl2a3Zkcnd6bHN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ1MDQ0MDEsImV4cCI6MjAzMDA4MDQwMX0.XTXSScKdkRFNKbvB5lbPy8-XBtEec7oMac29BSb71Is"
-    );
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

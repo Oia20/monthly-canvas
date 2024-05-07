@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './comments.css';
 import { createClient } from '@supabase/supabase-js';
 import { BrowserRouter as Router, Route, Link, useNavigate } from 'react-router-dom';
+import { supabase } from './supabaseClient'
 
 export default function Comments(props) {
     const [commentsNum, setCommentsNum] = useState(0);
@@ -13,10 +14,10 @@ export default function Comments(props) {
     const date = new Date();
     const month = date.getMonth() + 1;
 
-    const supabase = createClient(
-        "https://gliscfokeivkvdrwzlsv.supabase.co",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdsaXNjZm9rZWl2a3Zkcnd6bHN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ1MDQ0MDEsImV4cCI6MjAzMDA4MDQwMX0.XTXSScKdkRFNKbvB5lbPy8-XBtEec7oMac29BSb71Is"
-      );
+    // const supabase = createClient(
+    //     "https://gliscfokeivkvdrwzlsv.supabase.co",
+    //     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdsaXNjZm9rZWl2a3Zkcnd6bHN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ1MDQ0MDEsImV4cCI6MjAzMDA4MDQwMX0.XTXSScKdkRFNKbvB5lbPy8-XBtEec7oMac29BSb71Is"
+    //   );
       useEffect(() => {
         fetchUser();
       }, []);
