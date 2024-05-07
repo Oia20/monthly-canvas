@@ -9,8 +9,8 @@ import { supabase } from './supabaseClient'
 
 function ThreeDScene() {
   return (
-    <Canvas style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1}} camera={{ fov: 130, position: [-10, -10, -10] }}>
-      <Sparkles scale={200} color={"#be8ebb"} size={50} count={1000} speed={1}/>
+    <Canvas style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1}} camera={{ fov: 90, position: [0, 0, 0] }}>
+      <Sparkles scale={10} color={"#be8ebb"} size={25} count={250} speed={.25}/>
     </Canvas>
   );
 }
