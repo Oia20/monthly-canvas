@@ -23,6 +23,7 @@ export default function Nav() {
     async function signOut() {
         await supabase.auth.signOut()
         setUser(null);
+        window.location.reload();
     }
     function LogButton() {
         if (user) {

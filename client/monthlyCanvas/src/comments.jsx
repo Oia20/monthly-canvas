@@ -1,22 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import './comments.css';
+import { createClient } from '@supabase/supabase-js';
+import { BrowserRouter as Router, Route, Link, useNavigate } from 'react-router-dom';
 
-export default function Comments() {
+export default function Comments(props) {
     const [commentsNum, setCommentsNum] = useState(0);
     const [comment, setComment] = useState('');
     const [comments, setComments] = useState([]);
+    const [user, setUser] = useState(null)
+    const navigate = useNavigate();
 
     const date = new Date();
     const month = date.getMonth() + 1;
 
+    const supabase = createClient(
+        "https://gliscfokeivkvdrwzlsv.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdsaXNjZm9rZWl2a3Zkcnd6bHN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ1MDQ0MDEsImV4cCI6MjAzMDA4MDQwMX0.XTXSScKdkRFNKbvB5lbPy8-XBtEec7oMac29BSb71Is"
+      );
+      useEffect(() => {
+        fetchUser();
+      }, []);
+    async function fetchUser() {
+        const { data: { user } } = await supabase.auth.getUser()
+        console.log(user.aud)
+        setUser(user.aud)
+      }
     const handleTextareaChange = (event) => {
         setComment(event.target.value);
     };
 
     // Function to handle posting the comment
     const postComment = () => {
+        console.log("Authentication Status: ", user)
         setComment("");
-        if (comment.length > 0) {
+        if (comment.length > 0 && user) {
             const url = new URL('http://localhost:5102/comments/post');
             url.searchParams.append('month', month);
             
@@ -52,7 +69,7 @@ export default function Comments() {
                 console.error('Error posting comment:', error);
             });
         } else {
-            console.log("empty")
+            navigate("/login")
         }
         setTimeout(fetchComments, 1000);
     };
@@ -76,12 +93,12 @@ export default function Comments() {
     };
 
     // Automatically resize textarea when component mounts
-    useEffect(() => {
-        const textarea = document.getElementById('commentInput');
-        const textareaLineHeight = 2; // Adjust as needed
-        textarea.style.height = 'auto';
-        textarea.style.height = (textarea.scrollHeight + textareaLineHeight) + 'px';
-    }, []);
+    // useEffect(() => {
+    //     // const textarea = document.getElementById('commentInput');
+    //     // const textareaLineHeight = 2; // Adjust as needed
+    //     // textarea.style.height = 'auto';
+    //     // textarea.style.height = (textarea.scrollHeight + textareaLineHeight) + 'px';
+    // }, []);
 
     return (
         <div className='flex-row'>
@@ -98,7 +115,7 @@ export default function Comments() {
                 {comments.slice().reverse().map(comment => (
                     <div key={comment.id}>
                         <h4>{comment.comment}</h4>
-                    </div>
+            </div>
                 ))}
             </div>
         </div>
