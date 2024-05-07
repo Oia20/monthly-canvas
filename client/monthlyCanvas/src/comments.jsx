@@ -23,8 +23,14 @@ export default function Comments(props) {
         setUser(user.aud)
       }
     const handleTextareaChange = (event) => {
-        setComment(event.target.value);
-    };
+        const charCount = comment.length;
+            // If it exceeds, trim the text to the limit
+            setComment(event.target.value);
+            if (charCount >= 250) {
+                // If it exceeds, trim the text to the limit
+                setComment(event.target.value.substring(0, 250))
+            }
+        }
 
     // Function to handle posting the comment
     const postComment = () => {
@@ -108,6 +114,7 @@ export default function Comments(props) {
             <textarea
                 id="commentInput"
                 value={comment}
+                
                 onChange={handleTextareaChange}
                 placeholder='Add a comment'
                 className='comment-textarea'
