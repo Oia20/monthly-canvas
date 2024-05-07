@@ -94,10 +94,10 @@ export default function Comments() {
                 className='comment-textarea'
             ></textarea>
             <button onClick={postComment}><h4>Comment</h4></button>
-            <div>
+            <div className='comments-sec'>
                 {comments.slice().reverse().map(comment => (
                     <div key={comment.id}>
-                        <p>{comment.comment}</p>
+                        <h4>{comment.comment}</h4>
                     </div>
                 ))}
             </div>

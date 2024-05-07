@@ -3,7 +3,15 @@ import './App.css';
 import Nav from './nav.jsx'
 import Comments from './comments.jsx'
 import { createClient } from '@supabase/supabase-js';
-
+import { Canvas } from '@react-three/fiber';
+import { Stars, Sparkles } from '@react-three/drei'
+function ThreeDScene() {
+  return (
+    <Canvas style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1}} camera={{ fov: 130, position: [-10, -10, -10] }}>
+      <Sparkles scale={200} color={"#be8ebb"} size={50} count={1000} speed={1}/>
+    </Canvas>
+  );
+}
 function App() {
   const [artist, setArtist] = useState('');
   const [title, setTitle] = useState('');
@@ -67,6 +75,7 @@ function App() {
       ) : (
         <>
         <Nav />
+        <ThreeDScene />
         <div className='content'>
         <div className="plaque">
           <h1>{month}'s Painting</h1>

@@ -30,6 +30,8 @@
         overflow: hidden; /* Hide overflow */
         max-height: 200px; /* Adjust as needed */
         transition: max-height 0.3s ease; /* Smooth transition */
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.404);
+        
     }
 
     button {
@@ -52,6 +54,8 @@
         width: fit-content;
         align-self: flex-end;
         margin-top: 10px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.404);
+
             h4 {
               height: fit-content;
               margin: 0px;
@@ -65,3 +69,23 @@
         }
 }
     
+.comments-sec {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-bottom: 50px;
+
+    h4 {
+        background-color: #f8b296;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        border: solid 2px #d2a079;
+        font-size: 1em;
+        width: fit-content;
+        margin-right: 10%;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.404);
+    }
+}
