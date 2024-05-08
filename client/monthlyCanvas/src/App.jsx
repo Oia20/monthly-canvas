@@ -15,8 +15,8 @@ function ThreeDScene() {
   );
 }
 function App() {
-  const [artist, setArtist] = useState('');
-  const [title, setTitle] = useState('');
+  const [artist, setArtist] = useState('Leonardo Da Vinci');
+  const [title, setTitle] = useState("Mona List, this painting displays if there was an error fetching this month's painting, try refreshing the page.");
   const [image, setImage] = useState('886728_1_x.webp');
   const [loading, setLoading] = useState(true);
   const [month, setMonth] = useState("Month");
@@ -26,6 +26,9 @@ function App() {
   useEffect(() => {
     fetchArtists();
     fetchUser();
+    const date = new Date();
+    const monthName = date.toLocaleString('default', { month: 'long' });
+    setMonth(monthName)
   }, []);
 
   function refreshPage() {
@@ -47,8 +50,6 @@ function App() {
       const date = new Date();
       const month = date.getMonth();
       const currentData = data[month + 1];
-      const monthName = date.toLocaleString('default', { month: 'long' });
-      setMonth(month)
       setArtist(currentData.artist);
       setTitle(currentData.title);
       setImage(currentData.image);
