@@ -131,4 +131,6 @@ html {
 canvas {
   position:fixed;
   z-index: -1;
+  height: 120%;
+  width: 120%;
 }
