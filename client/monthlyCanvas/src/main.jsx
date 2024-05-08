@@ -11,9 +11,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
       <Routes>
 
-        <Route path="/" element={<App />} />
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/Register" element={<RegisterForm />} />
+        <Route path="/monthly-canvas" element={<App />} />
+        <Route path="/monthly-canvas/login" element={<LoginForm />} />
+        <Route path="/monthly-canvas/Register" element={<RegisterForm />} />
 
       </Routes>
     </React.StrictMode>

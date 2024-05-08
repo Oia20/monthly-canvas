@@ -33,7 +33,7 @@ export default function Nav() {
             )
         } else {
             return (
-            <Link to="/login">
+            <Link to="/monthly-canvas/login">
                 <button><h4>Sign in</h4></button>
             </Link>
             )

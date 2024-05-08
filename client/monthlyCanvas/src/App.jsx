@@ -48,13 +48,12 @@ function App() {
       const month = date.getMonth();
       const currentData = data[month + 1];
       const monthName = date.toLocaleString('default', { month: 'long' });
-      setMonth(monthName)
+      setMonth(month)
       setArtist(currentData.artist);
       setTitle(currentData.title);
       setImage(currentData.image);
     } catch (error) {
       // console.error('There was a problem with the fetch operation:', error);
-      fetchArtists()
     } finally {
       setLoading(false);
     }

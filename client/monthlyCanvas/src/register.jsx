@@ -53,8 +53,8 @@ export default function RegisterForm() {
                     <button className="logbut" type="submit"><h4>Register</h4></button>
                 </form>
                 {error && <p className="error">{error}</p>} {/* Display error message */}
-                <p>Have an account? <Link to="/login">Log in</Link></p>
-                <Link to="/">
+                <p>Have an account? <Link to="/monthly-canvas/login">Log in</Link></p>
+                <Link to="/monthly-canvas">
                     <p><a>Return to this month's artwork</a></p>
                 </Link>
             </div>

@@ -25,7 +25,7 @@ export default function LoginForm() {
                 setError(error.message);
             } else {
                 console.log('User:', user);
-                navigate("/")
+                navigate("/monthly-canvas")
                 // Redirect user after successful login
             }
         } catch (error) {
@@ -49,8 +49,8 @@ export default function LoginForm() {
                     <button className="logbut" type="submit"><h4>Login</h4></button>
                 </form>
                 {error && <p className="error">{error}</p>}
-                <p>Don't have an account? <Link to="/register">Sign up</Link></p>
-                <Link to="/">
+                <p>Don't have an account? <Link to="/monthly-canvas/register">Sign up</Link></p>
+                <Link to="/monthly-canvas">
                     <p>Return to this month's artwork</p>
                 </Link>
             </div>
