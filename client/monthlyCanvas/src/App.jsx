@@ -16,7 +16,7 @@ function ThreeDScene() {
 }
 function App() {
   const [artist, setArtist] = useState('Leonardo Da Vinci');
-  const [title, setTitle] = useState("Mona List, this painting displays if there was an error fetching this month's painting, try refreshing the page.");
+  const [title, setTitle] = useState("Mona Lisa, this painting displays if there was an error fetching this month's painting, try refreshing the page.");
   const [image, setImage] = useState('886728_1_x.webp');
   const [loading, setLoading] = useState(true);
   const [month, setMonth] = useState("Month");
