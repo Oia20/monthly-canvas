@@ -21,7 +21,7 @@ builder.Services.AddCors(options =>
             options.AddPolicy("AllowSpecificOrigin",
                 builder =>
                 {
-                    builder.WithOrigins("http://127.0.0.1:5173") // Replace with your actual origin
+                    builder.WithOrigins("http://127.0.0.1:8080") // Replace with your actual origin
                            .AllowAnyMethod()
                            .AllowAnyHeader();
                 });
@@ -44,13 +44,6 @@ app.MapPost("/comments/post", async (Comments comment, int month, CanvasContext 
 
 app.UseCors("AllowSpecificOrigin");
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
