@@ -7,6 +7,7 @@ import { Canvas } from '@react-three/fiber';
 import { Stars, Sparkles } from '@react-three/drei'
 import { supabase } from './supabaseClient'
 
+//3D particles for the background
 function ThreeDScene() {
   return (
     <Canvas style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1}} camera={{ fov: 90, position: [0, 0, 0] }}>
@@ -14,6 +15,8 @@ function ThreeDScene() {
     </Canvas>
   );
 }
+
+//Page layout function
 function App() {
   const [artist, setArtist] = useState('Leonardo Da Vinci');
   const [title, setTitle] = useState("Mona Lisa, this painting displays if there was an error fetching this month's painting, try refreshing the page.");
@@ -63,6 +66,7 @@ function App() {
 
 
   return (
+    //loader, it's turned off after the painting fetch.
     <>
       {loading ? (
         <div className='div-ld'>
