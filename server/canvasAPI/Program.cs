@@ -21,7 +21,7 @@ builder.Services.AddCors(options =>
             options.AddPolicy("AllowSpecificOrigin",
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:8080") // Replace with your actual origin
+                    builder.WithOrigins("https://oia20.github.io") // Replace with your actual origin
                            .AllowAnyMethod()
                            .AllowAnyHeader();
                 });

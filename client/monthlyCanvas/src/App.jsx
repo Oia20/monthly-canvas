@@ -6,6 +6,7 @@ import { createClient } from '@supabase/supabase-js';
 import { Canvas } from '@react-three/fiber';
 import { Stars, Sparkles } from '@react-three/drei'
 import { supabase } from './supabaseClient'
+import Footer from './footer.jsx'
 
 //3D particles for the background
 function ThreeDScene() {
@@ -40,12 +41,13 @@ function App() {
 
   async function fetchUser() {
     const { data: { user } } = await supabase.auth.getUser()
-    console.log(user.aud)
-    setUser(user.aud)
+    if (user.aud) {
+      setUser(user.aud)
+    }
   }
   async function fetchArtists() {
     try {
-      const response = await fetch('http://localhost:5102/api/Artworks');
+      const response = await fetch('https://remarkable-flexibility-production.up.railway.app/api/Artworks');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -57,7 +59,7 @@ function App() {
       setTitle(currentData.title);
       setImage(currentData.image);
     } catch (error) {
-      // console.error('There was a problem with the fetch operation:', error);
+        setTimeout(fetchArtists, 200);
     } finally {
       setLoading(false);
     }
@@ -76,8 +78,9 @@ function App() {
         </div>
       ) : (
         <>
-        <Nav />
         <ThreeDScene />
+
+        <Nav />
         <div className='content'>
         <div className="plaque">
           <h1>{month}'s Painting</h1>
@@ -95,6 +98,7 @@ function App() {
           </div>
         </div>
         <Comments />
+        <Footer />
         </>
       )}
     </>

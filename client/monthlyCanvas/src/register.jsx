@@ -29,7 +29,7 @@ export default function RegisterForm() {
                 setError(error.message);
             } else {
                 console.log("User signed up successfully:", data);
-                navigate("/login")
+                navigate("/monthly-canvas/login")
             }
         } catch (error) {
             console.error('Sign up error:', error.message);

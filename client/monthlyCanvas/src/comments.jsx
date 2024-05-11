@@ -19,8 +19,9 @@ export default function Comments(props) {
       }, []);
     async function fetchUser() {
         const { data: { user } } = await supabase.auth.getUser()
-        console.log(user.aud)
-        setUser(user.aud)
+        if (user.aud) {
+            setUser(user.aud)
+          }
       }
     const handleTextareaChange = (event) => {
         const charCount = comment.length;
@@ -34,10 +35,9 @@ export default function Comments(props) {
 
     // Function to handle posting the comment
     const postComment = () => {
-        console.log("Authentication Status: ", user)
         setComment("");
         if (comment.length > 0 && user) {
-            const url = new URL('http://localhost:5102/comments/post');
+            const url = new URL('https://remarkable-flexibility-production.up.railway.app/comments/post');
             url.searchParams.append('month', month);
             
             const postData = {
@@ -54,7 +54,6 @@ export default function Comments(props) {
             })
             .then(response => {
                 if (response.ok) {
-                    console.log('Comment posted successfully');
                     // Generate a unique ID for the new comment
                     const newCommentId = Date.now();
                     // Update comments using the functional update form of setComments
@@ -65,14 +64,12 @@ export default function Comments(props) {
                     setCommentsNum(prevNum => prevNum + 1);
                     setComment(''); // Clear the comment input
                 } else {
-                    console.error('Failed to post comment');
                 }
             })
             .catch(error => {
-                console.error('Error posting comment:', error);
             });
         } else if (!user) {
-            navigate("/login")
+            navigate("/monthly-canvas/login")
         } else {
             return
         }
@@ -86,7 +83,7 @@ export default function Comments(props) {
 
     // Function to fetch comments
     const fetchComments = () => {
-        fetch('http://localhost:5102/comments')
+        fetch('https://remarkable-flexibility-production.up.railway.app/comments')
             .then(response => response.json())
             .then(data => {
                 const filteredComments = data.filter(comment => comment.month === month)
@@ -96,7 +93,7 @@ export default function Comments(props) {
                 setCommentsNum(filteredComments.length);
             })
             .catch(error => {
-                console.error('Error fetching comments:', error);
+                setTimeout(fetchComments, 1000);
             });
     };
 

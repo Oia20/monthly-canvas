@@ -24,7 +24,6 @@ export default function LoginForm() {
                 console.error('Login error:', error.message);
                 setError(error.message);
             } else {
-                console.log('User:', user);
                 navigate("/monthly-canvas")
                 // Redirect user after successful login
             }
@@ -51,7 +50,7 @@ export default function LoginForm() {
                 {error && <p className="error">{error}</p>}
                 <p>Don't have an account? <Link to="/monthly-canvas/register">Sign up</Link></p>
                 <Link to="/monthly-canvas">
-                    <p>Return to this month's artwork</p>
+                    <p className='return'>Return to this month's artwork</p>
                 </Link>
             </div>
         </div>

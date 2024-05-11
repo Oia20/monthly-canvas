@@ -71,6 +71,14 @@
     text-decoration: none;
   }
   
+  .return {
+    color: #8a6c93;
+  }
+
+  .return:hover {
+    text-decoration: underline;
+  }
+  
   p a:hover {
     text-decoration: underline;
   }

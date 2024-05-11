@@ -6,18 +6,14 @@ import { supabase } from './supabaseClient'
 
 export default function Nav() {
     const [user, setUser] = useState(null)
-
-    // const supabase = createClient(
-    //     "https://gliscfokeivkvdrwzlsv.supabase.co",
-    //     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdsaXNjZm9rZWl2a3Zkcnd6bHN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ1MDQ0MDEsImV4cCI6MjAzMDA4MDQwMX0.XTXSScKdkRFNKbvB5lbPy8-XBtEec7oMac29BSb71Is"
-    //   );
       useEffect(() => {
         fetchUser();
       }, []);
     async function fetchUser() {
         const { data: { user } } = await supabase.auth.getUser()
-        console.log(user.aud)
-        setUser(user.aud)
+        if (user.aud) {
+            setUser(user.aud)
+          }
       }
 
 

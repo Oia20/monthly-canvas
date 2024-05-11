@@ -1,0 +1,17 @@
+
+.footer-sec {
+    background: #f8b296;
+    color: #444444;
+
+    padding: 1rem;
+    display: flex;
+    flex-direction:  row;
+    border-top: solid 2px #d2a079;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+        color: #444444;
+        margin-right: 20px;
+    }
+}
