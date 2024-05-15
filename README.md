@@ -3,6 +3,6 @@ A site which as a new famous piece of art displayed monthly to be voted and comm
 
 Tech stack:
 
-Front end: JS, React, CSS, HTML, R3F
+Front end: Vite, JS, React, CSS, HTML, R3F
 
 Back end: C#, Dotnet, Api's Docker, Railway, 
