@@ -1,5 +1,5 @@
 # monthly-canvas
-A site which as a new famous piece of art displayed monthly to be voted and commented on by users.
+A site which has a new famous piece of art displayed monthly to be voted and commented on by users.
 
 Tech stack:
 
