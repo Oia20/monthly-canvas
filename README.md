@@ -9,5 +9,8 @@ Front end: Vite, JS, React, CSS, HTML, R3F
 
 Back end: C#, Dotnet, Api's Docker, Railway, Supabase
 
-Mobile image of landing screen: 
+Desktop image of landing screen: 
 
+Login Screen:
+
+Registration Screen:
